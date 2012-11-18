@@ -1,4 +1,3 @@
-#!/bin/env node
 //  OpenShift sample Node application
 var http = require('http');
 
