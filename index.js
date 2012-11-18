@@ -17,7 +17,7 @@ http.createServer(function (request, response) {
 }).on('request', function() {
 	var cp = require('child_process');
 	var n = cp.fork(__dirname + '/miniserver.js');
-}).listen(8124);
+}).listen(80);
 
 console.log(util.inspect(process.memoryUsage()));
-console.log('Server running at http://127.0.0.1:8124/');
+console.log('Server running at http://127.0.0.1:80/');
