@@ -11,7 +11,7 @@ process.on('uncaughtException', function (err) {
 
 http.createServer(function (request, response) {
   response.writeHead(200, {'Content-Type': 'text/plain'});
-  var name = url.parse(request.url, true).query.name
+  var name = url.parse(request.url, true).query.name;
   var str = 'Hello ' + name + '\n' + 'I am online for ' + process.uptime() + '\n';
   response.end(str);
 }).on('request', function() {
