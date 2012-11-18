@@ -19,7 +19,7 @@ app.get('/', function(req, res) {
             if (match !== null) {
                 query = match[1].replace(/_/gi, ' ') + ' ' + match[2];
                 body += '<h1>' + data[i]['title'] + '</h1>';
-                body += '<p><a href="http://www.youtube.com/results?search_query=' + encodeURIComponent(query) + ' target="_blank">YouTube</a></p>'
+                body += '<p><a href="http://www.youtube.com/results?search_query=' + encodeURIComponent(query) + ' target="_blank">YouTube</a></p>';
                 body += '<p>' + relativeDate(new Date(data[i]['dc:date'])) + '</p>';
                 body += '<textarea cols=100 rows=5>';
                 for (var page = 1; page <= 4; page++) {
