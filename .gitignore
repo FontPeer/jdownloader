@@ -3,3 +3,5 @@
 .settings/*
 =======
 >>>>>>> openshift/master
+
+node_modules/*

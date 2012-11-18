@@ -1,10 +1,12 @@
 {
-  "name": "http-server",
-  "version": "0.3.0",
-  "author": "Nodejitsu <support@nodejitsu.com>",
-  "description": "a simple zero-configuration command-line http server",
+  "name": "filestube-helper",
+  "version": "0.0.1",
+  "author": "Tomas Fejfar <tomas.fejfar@gmail.com>",
+  "description": "a simple myrsstv parser for jdownloader",
   "private": true,
   "dependencies": {
-    "express": "3.x"
+    "express": "3.x",
+    "sax":"", 
+    "relative-date":""
   }
 }
