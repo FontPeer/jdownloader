@@ -1,4 +1,3 @@
-#!/bin/env node
 //  OpenShift sample Node application
 var http = require('http');
 
@@ -18,11 +17,11 @@ http.createServer(function (req, res) {
 	if (req.headers.hasOwnProperty('accept')) {
 		if (req.headers['accept'].toLowerCase() == "application/json") {
 			  res.writeHead(200, {'Content-Type': 'application/json'});
-			  res.end(JSON.stringify({'ip': addr}, null, 4) + "\n");			
+			  res.end(JSON.stringify({'ip': addr}, null, 4) + "\n");
 			  return ;
 		}
 	}
-	
+
   res.writeHead(200, {'Content-Type': 'text/plain'});
   res.write("Welcome to Node.js on OpenShift!\n\n");
   res.end("Your IP address seems to be " + addr + "\n");
