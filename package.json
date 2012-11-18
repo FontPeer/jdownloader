@@ -2,5 +2,9 @@
   "name": "http-server",
   "version": "0.3.0",
   "author": "Nodejitsu <support@nodejitsu.com>",
-  "description": "a simple zero-configuration command-line http server"
+  "description": "a simple zero-configuration command-line http server",
+  "private": true,
+  "dependencies": {
+    "express": "3.x"
+  }
 }
