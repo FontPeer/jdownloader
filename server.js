@@ -9,8 +9,9 @@ var relativeDate = require('relative-date');
 var ipaddr  = process.env.OPENSHIFT_INTERNAL_IP || "127.0.0.1";
 var port    = process.env.OPENSHIFT_INTERNAL_PORT || 8080;
 
+
 app.get('/', function(req, res) {
-    rss.get_rss('www.mytvrss.com', 80, '/tvrss.xml?id=' + req.params.id, function(data) {
+    rss.get_rss('www.mytvrss.com', 80, '/tvrss.xml?id=' + req.query["id"], function(data) {
         var l = data.length;
         var body = '';
         for (var i = 0; i < l; i++) {
@@ -20,7 +21,7 @@ app.get('/', function(req, res) {
             if (match !== null) {
                 query = match[1].replace(/_/gi, ' ') + ' ' + match[2];
                 body += '<h1>' + data[i]['title'] + '</h1>';
-                body += '<p><a href="http://www.youtube.com/results?search_query=' + encodeURIComponent(query) + ' target="_blank">YouTube</a></p>';
+                body += '<p><a href="http://www.youtube.com/results?search_query=' + encodeURIComponent(query) + '" target="_blank">YouTube</a></p>';
                 body += '<p>' + relativeDate(new Date(data[i]['dc:date'])) + '</p>';
                 body += '<textarea cols=100 rows=5>';
                 for (var page = 1; page <= 4; page++) {
@@ -30,9 +31,7 @@ app.get('/', function(req, res) {
                 body += '\n';
             }
             body += '</textarea>';
-        }
-
-
+        };
         res.setHeader('Content-Type', 'text/html');
         res.end(body);
     });
