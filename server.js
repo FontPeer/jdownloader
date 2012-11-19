@@ -2,7 +2,6 @@
 
 var express = require('express');
 var app = express();
-var downloader = require('./downloader');
 var rss = require('./sax-feed-parser');
 var url = require('url');
 var relativeDate = require('relative-date');
